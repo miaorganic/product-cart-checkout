@@ -5,33 +5,84 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Product — Oat & Honey Soap</title>
 <style>
-  body{font-family:Segoe UI, Arial; margin:20px; background:#f0ebe1} /* Page background */
-  .card{background:#fff;padding:18px;border-radius:10px;max-width:420px;margin:auto;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
-  h2{margin:0 0 8px}
-  
-  /* Pricing styles */
-  .price-box{margin-bottom:12px}
-  .old-price{color:#999;text-decoration:line-through;margin-right:8px;font-size:16px}
-  .new-price{font-weight:700;font-size:20px;color:#c44}
+  body {
+    font-family: Segoe UI, Arial;
+    margin: 20px;
+    background: #faf9f6; /* whole page same color */
+  }
+  .card {
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 420px;
+    margin: auto;
+    text-align: center; /* center align main content */
+  }
+  h2 {
+    margin: 0 0 12px;
+  }
 
-  .stock{font-weight:bold;margin:8px 0;color:#333}
-  .viewers{color:#333;font-size:14px;margin:8px 0;display:flex;align-items:center;gap:6px}
-  .add{background:#D6A7A1;color:#fff;border:0;padding:10px 16px;border-radius:8px;cursor:pointer}
-  .add:hover{background:#C2B280}
+  /* Pricing styles */
+  .price-box {
+    margin-bottom: 12px;
+  }
+  .old-price {
+    color: #999;
+    text-decoration: line-through;
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  .new-price {
+    font-weight: 700;
+    font-size: 20px;
+    color: #c44;
+  }
+
+  /* Stock + viewers (left aligned separately) */
+  .bottom-info {
+    margin-top: 15px;
+    text-align: left;
+  }
+  .stock {
+    font-weight: bold;
+    margin: 8px 0;
+    color: #333;
+  }
+  .viewers {
+    color: #333;
+    font-size: 14px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .add {
+    background: #D6A7A1;
+    color: #fff;
+    border: 0;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  .add:hover {
+    background: #C2B280;
+  }
 </style>
 </head>
 <body>
   <div class="card">
+    <!-- Product Name -->
     <h2>Oat & Honey Soap</h2>
 
-    <!-- 💰 Price section -->
+    <!-- Price -->
     <div class="price-box">
       <span class="old-price">Rs. 650</span>
       <span class="new-price">Rs. 550</span>
     </div>
 
-    <!-- ⭐ Custom Star Rating -->
-    <div style="width: 100%; display: flex; justify-content: center; margin:8px 0;">
+    <!-- ⭐ Rating + Reviews -->
+    <div style="display: flex; justify-content: center; margin: 8px 0;">
       <div style="display: flex; align-items: center; gap: 4px; font-size: 20px; line-height: 1;">
         <span style="color: #D4AF37;">★</span>
         <span style="color: #D4AF37;">★</span>
@@ -45,16 +96,14 @@
       </div>
     </div>
 
-    <!-- 📦 Stock -->
-    <div class="stock" id="stockStatus">Checking stock...</div>
-
-    <!-- 👁 Viewers -->
-    <div class="viewers">
-      <span style="font-size:16px;">👁</span> 
-      <span id="viewersCount">0</span>
-    </div>
-
+    <!-- Add to Cart -->
     <button class="add" onclick="addToCartAndGo()">Add to Cart</button>
+
+    <!-- Left aligned info -->
+    <div class="bottom-info">
+      <div class="stock" id="stockStatus">Checking stock...</div>
+      <div class="viewers"><span style="font-size:16px;">👁</span> <span id="viewersCount">0</span></div>
+    </div>
   </div>
 
 <script>
@@ -92,3 +141,4 @@ updateStock();
 </script>
 </body>
 </html>
+
