@@ -206,6 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
     cart = []; saveCart();
   });
 
+  <div style="margin-top:12px">
+  <button onclick="continueShopping()" class="btn ghost" style="width:100%">← Continue Shopping</button>
+</div>
+
   document.getElementById('checkoutBtn').addEventListener('click', () => {
     if(cart.length===0){ alert('Your cart is empty.'); return; }
     document.getElementById('checkoutForm').style.display = 'block';
@@ -276,6 +280,11 @@ function ordersToCSV(orders){
   });
   return [header, ...rows].map(r=>r.map(cell=>`"${String(cell).replace(/"/g,'""')}"`).join(',')).join('\n');
 }
+  function continueShopping() {
+  // This takes the customer back to the previous page they came from
+  window.history.back();
+}
+
 </script>
 </body>
 </html>
