@@ -116,7 +116,7 @@ function addToCartAndGo(){
   if(existing) existing.qty++;
   else cart.push({ id:'p1', name, price, qty:1 });
   localStorage.setItem('store_cart', JSON.stringify(cart));
-  window.location.href = './'; // cart page (adjust if needed)
+  window.top.location.href = https://miaorganic.github.io/product-cart-checkout/
 }
 
 /* ---------- Live viewers (3–18) ---------- */
