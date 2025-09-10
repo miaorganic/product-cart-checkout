@@ -8,24 +8,28 @@
 <body style="text-align:center;">
 
   <button 
-    style="background:#D6A7A1;color:#fff;border:0;padding:12px 16px;
-           border-radius:6px;cursor:pointer;font-size:14px;"
+    style="background:#D6A7A1;color:#fff;border:0;padding:12px 20px;
+           border-radius:6px;cursor:pointer;font-size:16px;"
     onclick="addToCartAndGo()">
     Add to Cart
   </button>
 
 <script>
 function addToCartAndGo(){
-  const name = 'Oat & Honey Soap';
-  const price = 550;
+  const name = 'Oat & Honey Soap';   // 🔹 Change this for each product
+  const price = 550;                 // 🔹 Change this for each product
+
   let cart = JSON.parse(localStorage.getItem('store_cart')) || [];
   let existing = cart.find(i => i.name === name);
   if(existing) existing.qty++;
   else cart.push({ id:'p1', name, price, qty:1 });
   localStorage.setItem('store_cart', JSON.stringify(cart));
-  window.location.href = './'; // redirect to cart/home page
+
+  // 🔹 Redirect to your GitHub cart page
+  window.location.href = "https://miaorganic.github.io/cart-checkout/";
 }
 </script>
 
 </body>
 </html>
+
