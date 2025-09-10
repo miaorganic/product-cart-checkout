@@ -9,9 +9,8 @@
   .card{background:#fff;padding:18px;border-radius:10px;max-width:420px;margin:auto;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
   h2{margin:0 0 8px}
   .price{font-weight:700;margin-bottom:12px;font-size:18px;color:#c44}
-  .rating{color:#f5a623;font-size:18px;margin:8px 0}
   .stock{font-weight:bold;margin:8px 0;color:#333}
-  .viewers{color:#666;font-size:14px;margin:8px 0}
+  .viewers{color:#333;font-size:14px;margin:8px 0;display:flex;align-items:center;gap:6px}
   .add{background:#D6A7A1;color:#fff;border:0;padding:10px 16px;border-radius:8px;cursor:pointer}
   .add:hover{background:#C2B280}
 </style>
@@ -21,14 +20,34 @@
     <h2>Oat & Honey Soap</h2>
     <div class="price">Rs. 550</div>
 
-    <!-- ⭐ Rating -->
-    <div class="rating" id="rating">★★★★☆ (4.5/5)</div>
+    <!-- ⭐ Custom Star Rating -->
+    <div style="width: 100%; display: flex; justify-content: center; margin:8px 0;">
+      <div style="display: flex; align-items: center; gap: 4px; font-size: 20px; line-height: 1;">
+        <!-- Full Stars -->
+        <span style="color: #D4AF37;">★</span>
+        <span style="color: #D4AF37;">★</span>
+        <span style="color: #D4AF37;">★</span>
+        <span style="color: #D4AF37;">★</span>
+
+        <!-- Half star using clipped span -->
+        <span style="position: relative; display: inline-block; color: #ccc;">
+          <span style="color: #D4AF37; width: 50%; overflow: hidden; position: absolute; top: 0; left: 0;">★</span>
+          ★
+        </span>
+
+        <!-- Review Count -->
+        <span style="font-size: 14px; color: #7A7262;">(27)</span>
+      </div>
+    </div>
 
     <!-- 📦 Stock -->
     <div class="stock" id="stockStatus">Checking stock...</div>
 
-    <!-- 👀 Viewers -->
-    <div class="viewers" id="viewersCount">Loading viewers...</div>
+    <!-- 👁 Viewers -->
+    <div class="viewers">
+      <span style="font-size:16px;">👁</span> 
+      <span id="viewersCount">0</span>
+    </div>
 
     <button class="add" onclick="addToCartAndGo()">Add to Cart</button>
   </div>
@@ -49,7 +68,7 @@ function addToCartAndGo(){
 /* ---------- Live viewers (3–18) ---------- */
 function updateViewers() {
   const viewers = Math.floor(Math.random() * (18 - 3 + 1)) + 3;
-  document.getElementById("viewersCount").innerText = viewers + " people are viewing this product now";
+  document.getElementById("viewersCount").innerText = viewers;
 }
 setInterval(updateViewers, 5000);
 updateViewers();
@@ -68,3 +87,4 @@ updateStock();
 </script>
 </body>
 </html>
+
