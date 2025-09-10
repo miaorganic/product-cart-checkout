@@ -228,16 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('billingFields').style.display = e.target.value === 'different' ? 'block':'none';
   });
 
-  document.getElementById('downloadOrdersBtn').addEventListener('click', () => {
-    const orders = JSON.parse(localStorage.getItem('store_orders')||'[]');
-    if(!orders.length){ alert('No orders saved locally yet.'); return; }
-    const csv = ordersToCSV(orders);
-    const blob = new Blob([csv], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = 'orders.csv'; a.click();
-    URL.revokeObjectURL(url);
-  });
+
 });
 
 /* ORDER / checkout handling */
