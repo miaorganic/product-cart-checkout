@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Product — Oat & Honey Soap</title>
+<title>Product — Honey & Oats Soap</title>
 <style>
   body {
     font-family: Segoe UI, Arial;
@@ -73,12 +73,12 @@
 <body>
   <div class="card">
     <!-- Product Name -->
-    <h2>Oat & Honey Soap</h2>
+    <h2>Honey & Oats Soap</h2>
 
     <!-- Price -->
     <div class="price-box">
       <span class="old-price">Rs. 650</span>
-      <span class="new-price">Rs. 550</span>
+      <span class="new-price">Rs. 585</span>
     </div>
 
     <!-- ⭐ Rating + Reviews -->
@@ -92,7 +92,7 @@
           <span style="color: #D4AF37; width: 50%; overflow: hidden; position: absolute; top: 0; left: 0;">★</span>
           ★
         </span>
-        <span style="font-size: 14px; color: #7A7262;">(27)</span>
+        <span style="font-size: 14px; color: #7A7262;">(9)</span>
       </div>
     </div>
 
@@ -109,14 +109,14 @@
 <script>
 /* ---------- Add to Cart ---------- */
 function addToCartAndGo(){
-  const name = 'Oat & Honey Soap';
-  const price = 550;
+  const name = 'Honey and Oats Soap';
+  const price = 585;
   let cart = JSON.parse(localStorage.getItem('store_cart')) || [];
   let existing = cart.find(i => i.name === name);
   if(existing) existing.qty++;
   else cart.push({ id:'p1', name, price, qty:1 });
   localStorage.setItem('store_cart', JSON.stringify(cart));
-  window.top.location.href = https://miaorganic.github.io/product-cart-checkout/
+  window.location.href = './'; // cart page (adjust if needed)
 }
 
 /* ---------- Live viewers (3–18) ---------- */
@@ -141,4 +141,5 @@ updateStock();
 </script>
 </body>
 </html>
+
 
